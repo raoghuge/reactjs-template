@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Redirect, Switch } from 'react-router-dom';
+import routes from './routes/Routes';
+import RouteWithSubRoutes from './utils/RouteWithSubRoutes';
+import { Suspense, useEffect } from 'react';
+import Loader from './components/loader/Loader';
+import Store from './application/context/Store';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+	return (
+		<Store>
+			<BrowserRouter>
+				<Suspense fallback={<Loader />}>
+					<Switch>
+						<Redirect exact from='/' to='/login' />
+						{routes.map((route, i) => (
+							<RouteWithSubRoutes key={i} {...route} />
+						))}
+					</Switch>
+				</Suspense>
+			</BrowserRouter>
+		</Store>
+	);
 }
 
 export default App;
+
+
+

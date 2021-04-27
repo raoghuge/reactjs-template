@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# TSP - Customers is react based customer facing web app for bill payments
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+TSP - Bill Payment
+React based customer facing bill payment app
 
 ## Available Scripts
 
