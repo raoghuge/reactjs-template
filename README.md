@@ -1,7 +1,7 @@
 # The most advance React JS Template with context API
 
 **React JS Template**
-- Most lightweight
+- Very lightweight
 - Lazy Loading / code Splitting
 - Context API (No Redux required)
 - Theming Support
