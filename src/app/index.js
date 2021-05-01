@@ -1,9 +1,9 @@
 import { BrowserRouter, Redirect, Switch } from 'react-router-dom';
-import routes from './routes/Routes';
-import RouteWithSubRoutes from './utils/RouteWithSubRoutes';
-import { Suspense, useEffect } from 'react';
-import Loader from './components/loader/Loader';
-import Store from './application/context/Store';
+import routes from 'app/routes';
+import RouteWithSubRoutes from 'app/utils/RouteWithSubRoutes';
+import { Suspense } from 'react';
+import Loader from 'app/loader/Loader';
+import Store from 'app/context/Store';
 
 
 function App() {
@@ -25,6 +25,3 @@ function App() {
 }
 
 export default App;
-
-
-

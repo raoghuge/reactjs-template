@@ -1,6 +1,7 @@
 import { Switch, Link } from 'react-router-dom';
-import RouteWithSubRoutes from '../utils/RouteWithSubRoutes';
-import ThemeSwitcher from '../theme/ThemeSwitcher';
+import RouteWithSubRoutes from 'app/utils/RouteWithSubRoutes';
+import ThemeSwitcher from 'app/theme/ThemeSwitcher';
+import LanguageSwitcher from 'app/translations/LanguageSwitcher';
 
 const Home = ({ routes }) => {
 	const menu = [
@@ -16,13 +17,12 @@ const Home = ({ routes }) => {
 
 	return (
 		<>
-		<ThemeSwitcher/>
+			<ThemeSwitcher/>
+			<LanguageSwitcher />
 			<div className='home'>
 				{/* This can be treated as a sidebar component */}
 				<div className='sidebar'>
 					<h2>React Nested Routes</h2>
-
-
 					<ul>
 						{menu.map((menuItem) => (
 							<li key={menuItem.name}>
