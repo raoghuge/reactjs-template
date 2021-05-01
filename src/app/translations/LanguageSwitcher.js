@@ -1,19 +1,16 @@
-import React from 'react';
-import StorageUtils from 'app/utils/StorageUtils';
+import React, { useContext } from 'react';
 import { StoreContext } from 'app/context/Store';
-import { useContext, useEffect } from 'react';
+ 
 import { CHANGE_LANG } from 'app/context/Types';
+import useLocalStorage from '../utils/useLocalStorage';
 
 const LanguageSwitcher = () => {
+	const [lang, setLang] = useLocalStorage('lang', 'en');
 	const context = useContext(StoreContext);
-	useEffect(() => {
-		let lang = StorageUtils.get('lang');
-		if(lang) {
-			changeLang(lang);
-		}
-	});
-
+  alert('default lang'+ lang);
 	const changeLang = (lang) => {
+ 
+		setLang(lang);
 		context.dispatch({ type: CHANGE_LANG, payload: lang});
 	};
 

@@ -1,6 +1,6 @@
 import React, { useReducer, useEffect } from 'react';
-import StorageUtils from 'app/utils/StorageUtils';
 import Reducer from 'app/context/Reducer';
+import useLocalStorage from 'app/utils/useLocalStorage';
 
 const initialState = {
 	theme: 'light', 
@@ -9,10 +9,10 @@ const initialState = {
 
 function Store(props) {
 	const [state, dispatch] = useReducer(Reducer, initialState);
+	const [lang, setLang] = useLocalStorage('lang', 'en');
+	const [theme, setTheme] = useLocalStorage('theme','light');
     
 	useEffect(() => {
-		let theme = StorageUtils.get('theme');
-		let lang = StorageUtils.get('lang');
 		dispatch({action: 'INITIALIZE', payload:{theme, lang }});
 	}, []);
 

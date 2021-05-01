@@ -1,14 +1,13 @@
 import { Link } from 'react-router-dom';
 import { Translate as t } from 'app/translations';
-// import { StoreContext } from 'app/context/Store';
-// import { useContext, useEffect } from 'react';
-// import { INITIALIZE } from 'app/context/Types';
+import { ALL_USERS } from '../api/ApiEndpoints';
+import useHttpGet from '../api/useHttpGet';
 
 const Login = (props) => {
-	// const context = useContext(StoreContext);
-	// useEffect(() => {
-	// 	// context.dispatch({type: INITIALIZE});
-	// });
+	const [data, loading, error, refetch] = useHttpGet(ALL_USERS);
+
+	if (loading) return <p>Loading...</p>;
+	if (error) return <p>Error!</p>;
 
 	return (
 		<>
@@ -18,6 +17,12 @@ const Login = (props) => {
 					Login
 				</Link>
 			</div>
+			<hr></hr>
+			<div>
+				<button onClick={refetch}>refetch</button>
+				<pre>{JSON.stringify(data, null, 2)}</pre>
+			</div>
+
 		</>
 	);
 };
