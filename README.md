@@ -1,7 +1,12 @@
-# TSP - Customers is react based customer facing web app for bill payments
+# The most advance React JS Template with context API
 
-TSP - Bill Payment
-React based customer facing bill payment app
+**React JS Template**
+- Very lightweight
+- Lazy Loading / code Splitting
+- Context API (No Redux required)
+- Theming Support
+- Custom I18n support
+
 
 ## Available Scripts
 
