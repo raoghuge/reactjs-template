@@ -1,7 +1,6 @@
 import { Switch, Link } from 'react-router-dom';
 import RouteWithSubRoutes from 'app/utils/RouteWithSubRoutes';
 import ThemeSwitcher from 'app/theme/ThemeSwitcher';
-import LanguageSwitcher from 'app/translations/LanguageSwitcher';
 
 const Home = ({ routes }) => {
 	const menu = [
@@ -18,7 +17,7 @@ const Home = ({ routes }) => {
 	return (
 		<>
 			<ThemeSwitcher/>
-			<LanguageSwitcher />
+		
 			<div className='home'>
 				{/* This can be treated as a sidebar component */}
 				<div className='sidebar'>

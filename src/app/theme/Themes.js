@@ -1,11 +1,15 @@
 const Themes = {
 	light: {
-		"--background-color" : "#ffffff",
-		"--color": 'black'
+		"--background-color" : "#f1f1f1",
+		"--bg-secondary-color":"#fdfdfd",
+		"--color": 'black',
+		"--header-color": "#f1f1f1"
 	},
 	dark: {
 		"--background-color" : "#000",
-		"--color": 'white'
+		"--bg-secondary-color":"gray",
+		"--color": 'white',
+		"--header-color": "#090909"
 	}
 };
 

@@ -2,7 +2,7 @@ import React from 'react';
 import Subpage1 from 'app/pages/subpages/Subpage1';
 import Subpage2 from 'app/pages/subpages/Subpage2';
 const Home = React.lazy(() => import('app/pages/Home'));
-const Login = React.lazy(() => import('app/pages/Login'));
+const Login = React.lazy(() => import('app/pages/auth/Login'));
 const Page1 = React.lazy(() => import('app/pages/Page1'));
 const Page2 = React.lazy(() => import('app/pages/Page2'));
 

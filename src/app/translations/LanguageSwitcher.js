@@ -5,11 +5,10 @@ import { CHANGE_LANG } from 'app/context/Types';
 import useLocalStorage from '../utils/useLocalStorage';
 
 const LanguageSwitcher = () => {
-	const [lang, setLang] = useLocalStorage('lang', 'en');
+	const [lang, setLang] = useLocalStorage('lang');
 	const context = useContext(StoreContext);
-  alert('default lang'+ lang);
+  console.log(lang);
 	const changeLang = (lang) => {
- 
 		setLang(lang);
 		context.dispatch({ type: CHANGE_LANG, payload: lang});
 	};
