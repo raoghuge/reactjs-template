@@ -8,6 +8,8 @@
 - Custom I18n support
 
 
+**Animations
+We are using Open(https://www.react-reveal.com/) React Reveal for animations
 ## Available Scripts
 
 In the project directory, you can run:
