@@ -8,6 +8,7 @@ import { StoreContext } from '../../context/Store';
 import { INITIALIZE } from 'app/context/Types';
 import Header from '../../components/header/Header';
 import { Link } from 'react-router-dom';
+import Button from 'app/components/button/Button';
 // import useHttp from '../../api/useHttp';
 
 const Login = (props) => {
@@ -28,6 +29,10 @@ const Login = (props) => {
 		context.dispatch({ type: INITIALIZE, payload: { ...context.state, lang, theme } });
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [theme, lang]);
+
+	const alertSomething = () => {
+		alert('This is clicked');
+	};
 
 	return (
 		<>
@@ -53,7 +58,7 @@ const Login = (props) => {
 					</div>
 
 					<div class="form-group">
-						<Link to='/home' className='button'>
+						<Link to='/dashboard' className='button'>
 							<button class="form-button" type="submit">Login</button>
 						</Link>
 
@@ -64,6 +69,9 @@ const Login = (props) => {
 				</form>
 				</div>
 				</Fade>
+
+
+				<Button label="Go to Dashboard" action={alertSomething}/> 
 			</div>
 		
 		</>
